@@ -1,0 +1,8 @@
+CHIP MyNot8 {
+    IN in[8];
+    OUT out[8];
+
+    PARTS:
+ // Put your implementation here.
+
+}

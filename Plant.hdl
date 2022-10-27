@@ -1,0 +1,25 @@
+CHIP Plant{
+IN x,y,z;
+OUT F;
+
+/* 
+
+A'B'C + A'BC' + A'BC + ABC'
+A'C(B' + B) + BC(A' + A)
+A'C + BC' 
+
+# 2 NOTs, 2 ANDs, and 1 Or
+
+*/ 
+
+PARTS:
+Not(in = x, out = Notx);
+Not(in = z, out = Notz);
+
+And(a = Notx, b = z, out = temp1);
+And(a = Notz, b = y, out = temp2);
+
+Or(a = temp1, b =  temp2, out = F);
+
+}
+
